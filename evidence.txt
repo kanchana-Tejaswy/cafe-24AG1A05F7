@@ -1,0 +1,109 @@
+QUESTION 1 - INDIVIDUAL GIT WORK
+Roll Number: 24AG1A05F7
+Repository: cafe-24AG1A05F7
+
+Q1.5(a) - SOFT RESET
+
+Commands executed:
+git reset --soft HEAD~2
+git status -s
+
+Actual output:
+M  README.md
+R  dessert.txt -> desserts.txt
+A  drink.txt
+
+Explanation:
+git reset --soft HEAD~2 moves the current branch back by two commits
+while keeping the changes staged in the working tree.
+
+Q1.6 - BRANCH AND MERGE
+
+Commands:
+git switch -c feature-hours
+Set-Content hour.txt "min-fri 8-6"
+git add hour.txt
+git commit -m "add opening hours"
+git switch main
+Test-Path hour.txt
+git merge feature-hours
+Test-Path hour.txt
+git branch -d feature-hours
+
+Observed results:
+Before merge: False
+After merge: True
+Branch deleted successfully.
+Merge output:
+Updating a120369..7a854b6
+Fast-forward
+hour.txt | 1 +
+1 file changed, 1 insertion(+)
+create mode 100644 hour.txt
+
+Q1.7 - LOGS FOR menu.txt
+
+Command:
+git log --oneline -- menu.txt
+
+Actual output:
+b1cbc83 update menu
+3e2c327 add menu items
+b5d8c8b add menu
+
+Q1.5(b) - HARD RESET
+
+Commands:
+Add-Content README.md "junk"
+git add README.md
+git commit -m "throwaway"
+git reset --hard HEAD~1
+
+Verification:
+Get-Content README.md
+
+Actual relevant output:
+Campus Cafe Menu - 24AG1A05F7
+temp
+
+Explanation:
+git reset --hard HEAD~1 removed the throwaway commit and discarded its tracked file change.
+
+Q1.4 - REVERT
+
+Original commit:
+3c6436a add specials (wrong price)
+
+Revert commit:
+645bad3 Revert add specials (wrong price)
+
+Explanation:
+git revert is safer for commits already shared on GitHub because it creates a new commit that reverses the changes without rewriting shared history. git reset can move the branch pointer and rewrite local history.
+
+FINAL VERIFICATION
+
+Files present:
+README.md
+menu.txt
+desserts.txt
+drink.txt
+hour.txt
+evidence.txt
+
+specials.txt: absent
+
+Final git status before adding evidence:
+On branch main
+Untracked files:
+    evidence.txt
+
+Final log before adding evidence:
+7a854b6 add opening hours
+a120369 add mote to readmi
+645bad3 Revert add specials (wrong price)
+3c6436a add specials (wrong price)
+bc7a857 add desserts
+b1cbc83 update menu
+3e2c327 add menu items
+b5d8c8b add menu
+4077a70 add readme
