@@ -1,109 +1,58 @@
-QUESTION 1 - INDIVIDUAL GIT WORK
-Roll Number: 24AG1A05F7
-Repository: cafe-24AG1A05F7
-
-Q1.5(a) - SOFT RESET
-
-Commands executed:
-git reset --soft HEAD~2
-git status -s
-
-Actual output:
-M  README.md
-R  dessert.txt -> desserts.txt
-A  drink.txt
-
-Explanation:
-git reset --soft HEAD~2 moves the current branch back by two commits
-while keeping the changes staged in the working tree.
-
-Q1.6 - BRANCH AND MERGE
-
-Commands:
-git switch -c feature-hours
-Set-Content hour.txt "min-fri 8-6"
-git add hour.txt
-git commit -m "add opening hours"
-git switch main
-Test-Path hour.txt
-git merge feature-hours
-Test-Path hour.txt
-git branch -d feature-hours
-
-Observed results:
-Before merge: False
-After merge: True
-Branch deleted successfully.
-Merge output:
-Updating a120369..7a854b6
-Fast-forward
-hour.txt | 1 +
-1 file changed, 1 insertion(+)
-create mode 100644 hour.txt
-
-Q1.7 - LOGS FOR menu.txt
-
-Command:
-git log --oneline -- menu.txt
-
-Actual output:
-b1cbc83 update menu
-3e2c327 add menu items
-b5d8c8b add menu
-
-Q1.5(b) - HARD RESET
-
-Commands:
-Add-Content README.md "junk"
-git add README.md
-git commit -m "throwaway"
-git reset --hard HEAD~1
-
-Verification:
-Get-Content README.md
-
-Actual relevant output:
-Campus Cafe Menu - 24AG1A05F7
-temp
-
-Explanation:
-git reset --hard HEAD~1 removed the throwaway commit and discarded its tracked file change.
-
-Q1.4 - REVERT
-
-Original commit:
-3c6436a add specials (wrong price)
-
-Revert commit:
-645bad3 Revert add specials (wrong price)
-
-Explanation:
-git revert is safer for commits already shared on GitHub because it creates a new commit that reverses the changes without rewriting shared history. git reset can move the branch pointer and rewrite local history.
-
-FINAL VERIFICATION
-
-Files present:
-README.md
-menu.txt
-desserts.txt
-drink.txt
-hour.txt
-evidence.txt
-
-specials.txt: absent
-
-Final git status before adding evidence:
-On branch main
-Untracked files:
-    evidence.txt
-
-Final log before adding evidence:
-7a854b6 add opening hours
-a120369 add mote to readmi
-645bad3 Revert add specials (wrong price)
-3c6436a add specials (wrong price)
-bc7a857 add desserts
-b1cbc83 update menu
-3e2c327 add menu items
-b5d8c8b add menu
-4077a70 add readme
+== graph ==
+*   a6b0b87 (HEAD -> main, origin/main, origin/HEAD) Merge pull request #1 from kanchana-Tejaswy/feature/dessert-menu
+|\  
+| * 0c676d9 Update brownie price to 50
+| * d67738a Add brownie to desserts
+|/  
+* 4325a1a add exam written answers
+*   de42430 Merge branch 'main' of https://github.com/kanchana-Tejaswy/cafe-24AG1A05F7
+|\  
+| * 7f685ff sam:add vada
+* | 180a3e1 alex : add combo offer
+|/  
+* 6184621 sam add samosa
+* e03ee89 add git exam evidence
+* 7a854b6 add opening hours
+* a120369 add mote to readmi
+* 645bad3 Revert add specials (wrong price)
+* 3c6436a add specials (wrong price)
+* bc7a857 add desserts
+* b1cbc83 update menu
+* 3e2c327 add menu items
+* b5d8c8b add menu
+* 4077a70 add readme
+== branches ==
+* main                a6b0b87 [origin/main] Merge pull request #1 from kanchana-Tejaswy/feature/dessert-menu
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main a6b0b87 Merge pull request #1 from kanchana-Tejaswy/feature/dessert-menu
+== authors ==
+a6b0b87 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | Merge pull request #1 from kanchana-Tejaswy/feature/dessert-menu
+0c676d9 | Kanchana.Tejawy ^<mail2tejaswy@gmail.com^> | Update brownie price to 50
+d67738a | Kanchana.Tejawy ^<mail2tejaswy@gmail.com^> | Add brownie to desserts
+4325a1a | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add exam written answers
+de42430 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | Merge branch 'main' of https://github.com/kanchana-Tejaswy/cafe-24AG1A05F7
+7f685ff | Sam Teammate ^<kanchan.teja999@gmail.com^> | sam:add vada
+180a3e1 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | alex : add combo offer
+6184621 | Sam Teammate ^<kanchan.teja999@gmail.com^> | sam add samosa
+e03ee89 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add git exam evidence
+7a854b6 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add opening hours
+a120369 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add mote to readmi
+645bad3 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | Revert add specials (wrong price)
+3c6436a | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add specials (wrong price)
+bc7a857 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add desserts
+b1cbc83 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | update menu
+3e2c327 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add menu items
+b5d8c8b | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add menu
+4077a70 | Kanchana Tejaswy ^<mail2tejaswy@gmail.com^> | add readme
+== reflog ==
+a6b0b87 HEAD@{0}: checkout: moving from main to main
+a6b0b87 HEAD@{1}: pull: Fast-forward
+4325a1a HEAD@{2}: checkout: moving from feature/dessert-menu to main
+0c676d9 HEAD@{3}: commit: Update brownie price to 50
+d67738a HEAD@{4}: commit: Add brownie to desserts
+4325a1a HEAD@{5}: checkout: moving from main to feature/dessert-menu
+4325a1a HEAD@{6}: checkout: moving from main to main
+4325a1a HEAD@{7}: reset: moving to origin/main
+ee239ca HEAD@{8}: commit: Direct push test
+4325a1a HEAD@{9}: checkout: moving from main to main
+4325a1a HEAD@{10}: clone: from https://github.com/kanchana-Tejaswy/cafe-24AG1A05F7.git
