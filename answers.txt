@@ -1,0 +1,45 @@
+1. QUESTION 1 - WRITTEN ANSWERS
+
+Q1.2 - Difference commands:
+git diff
+git diff --staged
+
+git diff shows unstaged changes in the working tree.
+git diff --staged shows staged changes ready for the next commit.
+
+Q1.4 - Why is git revert safer than git reset for a shared commit?
+git revert creates a new commit to undo changes without rewriting shared history.
+
+Q1.5(a) - Output of git status -s after git reset --soft HEAD~2:
+M  README.md
+R  dessert.txt -> desserts.txt
+A  drink.txt
+
+Q1.7 - Output of git log --oneline -- menu.txt:
+b1cbc83 update menu
+3e2c327 add menu items
+b5d8c8b add menu
+
+
+2. QUESTION 2 - WRITTEN ANSWERS
+
+Q2.2 - Sam identity verification output:
+Sam Teammate
+
+Q2.3 - Alex status after fetch:
+## main...origin/main [behind 1]
+
+Q2.3 - Difference between git fetch and git pull:
+git fetch downloads remote changes without integrating them into the current branch, while git pull fetches and integrates those changes into the current branch.
+
+Q2.4 - Alex status before pushing:
+## main...origin/main [ahead 1]
+
+Q2.4 - Alex status after fetching Sam's commit:
+## main...origin/main [ahead 1, behind 1]
+
+Q2.4 - Rejected push line:
+! [rejected] main -> main (non-fast-forward)
+
+Q2.4 - Merge commit:
+de42430 Merge branch 'main' of https://github.com/kanchana-Tejaswy/cafe-24AG1A05F7
