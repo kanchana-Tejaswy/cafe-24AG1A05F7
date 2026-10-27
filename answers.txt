@@ -43,3 +43,11 @@ Q2.4 - Rejected push line:
 
 Q2.4 - Merge commit:
 de42430 Merge branch 'main' of https://github.com/kanchana-Tejaswy/cafe-24AG1A05F7
+
+3. QUESTION 3 - WRITTEN ANSWERS
+
+Q3.1 - Error message when pushing directly to protected main:
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+
+Explanation:
+Changes must be made through a pull request.
